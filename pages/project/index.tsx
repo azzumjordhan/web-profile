@@ -3,6 +3,7 @@ import SocialMedia from "@/components/SocialMedia";
 import Copyright from "@/source/Copyright";
 import {
   Box,
+  Button,
   Card,
   CardContent,
   CardMedia,
@@ -17,6 +18,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { setPages } from "@/redux/actions";
 import router from "next/router";
+
+const styleSpan = {
+  cursor: "pointer",
+  color: "#0AFFFF",
+}
 
 const Project = () => {
   const [project, setDataProject] = useState<any>([]);
@@ -42,6 +48,8 @@ const Project = () => {
   useEffect(() => {
     fetchDataProject(isPage);
   }, [isPage]);
+
+  const [isReadMore, setIsReadMore] = useState(true);
   
   return (
     <Container maxWidth="lg">
@@ -82,8 +90,25 @@ const Project = () => {
                     <Typography gutterBottom variant="h5" component="div" color="white">
                       {data.title}
                     </Typography>
-                    <Typography variant="body2" color="white">
-                      {data.description}
+                    <Typography
+                      component="div"
+                      variant="body2"
+                      color="white"
+                      align="justify"
+                      sx={{
+                          overflow:"hidden",
+                          textOverflow:"ellipsis",
+                          height: 100,
+                          wordWrap: "break-word",
+                      }}
+                    >
+                      {isReadMore ? data.description.slice(0, 140): data.description }
+                      {data.description.length > 140 &&
+                      <span style={styleSpan} onClick={() => {
+                        router.push(`/project/detail/${data.id}`);
+                      }}>
+                        {isReadMore ? ' ..read more' : ' ...show less'}
+                      </span>}
                     </Typography>
                   </CardContent>
               </Grid>

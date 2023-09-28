@@ -56,7 +56,7 @@ const ProjectDetail = () => {
         </Typography>
       </Box>
       <Box margin="5px">
-        <Typography color="white">
+        <Typography color="white" align="justify">
           {detailProject?.data?.description}
         </Typography>
       </Box>

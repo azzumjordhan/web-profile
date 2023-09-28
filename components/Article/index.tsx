@@ -46,9 +46,9 @@ const ArticleComponent = (props: EnhancedDataArticle) => {
                   router.push(`/article/detail/${data.id}`);
                 }}
               >
-                <Grid container spacing={2}>
+                <Grid container spacing={2} sx={{ height: 80}}>
                   <Grid item xs={8}>
-                    <Typography color="white">{data.title}</Typography>
+                    <Typography color="white" sx={{ fontWeight: "700"}}>{data.title}</Typography>
                   </Grid>
                   <Grid item xs={4} textAlign="right">
                     <Typography color="white">
@@ -56,7 +56,7 @@ const ArticleComponent = (props: EnhancedDataArticle) => {
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <Typography color="white" variant="body2">
+                    <Typography noWrap color="white" variant="body2" sx={{ overflow: "hidden", textOverflow: "ellipsis"}}>
                       {data.description}
                     </Typography>
                   </Grid>

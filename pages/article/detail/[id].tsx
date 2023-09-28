@@ -51,7 +51,7 @@ const ArticleDetail = () => {
         </Typography>
       </Box>
       <Box margin="5px">
-        <Typography color="white">
+        <Typography color="white" align="justify">
           {detailArticle?.description}
         </Typography>
       </Box>
