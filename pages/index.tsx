@@ -20,17 +20,20 @@ import router from "next/router";
 import Headerbar from "@/components/Headerbar";
 import SocialMedia from "@/components/SocialMedia";
 import { useDispatch, useSelector } from "react-redux";
-import { getArticleDashboard, getProjectDashboard } from "@/redux/actions";
+import { getArticleDashboard, getProjectDashboard, getTechDashboard } from "@/redux/actions";
 import { useEffect } from "react";
 import ArticleComponent from "@/components/Article";
 import ProjectComponent from "@/components/Project";
 
 export default function Home() {
   const dispatch: any = useDispatch();
-  const { dashboardArticle, dashboardProject } = useSelector(
+  const { dashboardTech, dashboardArticle, dashboardProject } = useSelector(
     (state: any) => state.dashboardReducer
   );
 
+  const fetchDashboardTech = () => {
+    dispatch(getTechDashboard());
+  }
   const fetchDashboardArticle = () => {
     dispatch(getArticleDashboard());
   };
@@ -38,6 +41,9 @@ export default function Home() {
     dispatch(getProjectDashboard());
   };
 
+  useEffect(() => {
+    fetchDashboardTech();
+  }, []);
   useEffect(() => {
     fetchDashboardArticle();
   }, []);
@@ -56,49 +62,21 @@ export default function Home() {
         </p>
         <h1 style={{ color: "white" }}>Tech</h1>
         <Grid container spacing={2}>
-          <Grid item xs={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="180"
-                image={NodeLogo.src}
-                alt="NodeJS"
-              />
-            </Card>
-          </Grid>
-          <Grid item xs={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="180"
-                image={TSLogo.src}
-                alt="TypeScript"
-                sx={{ objectFit: "contain" }}
-              />
-            </Card>
-          </Grid>
-          <Grid item xs={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="180"
-                image={JavaLogo.src}
-                alt="Java"
-                sx={{ objectFit: "contain" }}
-              />
-            </Card>
-          </Grid>
-          <Grid item xs={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="180"
-                image={Spring.src}
-                alt="SpringBoot"
-                sx={{ objectFit: "fill" }}
-              />
-            </Card>
-          </Grid>
+          {dashboardTech?.length > 0 && dashboardTech.map((data: any, index: number) => {
+            return (
+              <Grid item xs={3} key={data.id}>
+                <Card>
+                  <CardMedia
+                    component="img"
+                    height="180"
+                    image={data.picture}
+                    alt={data.name_tech}
+                    sx={{ objectFit: "contain", width: "100%" }}
+                  />
+                </Card>
+              </Grid>
+            )
+          })}
         </Grid>
         <h1 style={{ color: "white" }}>Articles</h1>
         <ArticleComponent articles={dashboardArticle?.data} />

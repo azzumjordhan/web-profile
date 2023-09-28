@@ -58,26 +58,34 @@ const Project = () => {
           dataProject?.items?.map(( data: any, index: number) => {
             return (
               <Grid item xs={3} key={data.id}>
-                <Card>
                   <CardMedia
                     component="img"
                     height="180"
                     image={data.image}
                     alt="NestJS"
-                    sx={{ cursor: "pointer" }}
+                    sx={{ cursor: "pointer",
+                    backgroundColor: 'primary.dark',
+                    transitionDuration: "0.5s",
+                    '&:hover': {
+                      backgroundColor: 'primary.main',
+                      scale: "110%",
+                      height:"200",
+                      width: "200",
+                      opacity: "80",
+                      transitionDuration: "0.5S",
+                    }, }}
                     onClick={() => {
                       router.push(`/project/detail/${data.id}`);
                     }}
                   />
-                  <CardContent sx={{ height: 120 }}>
-                    <Typography gutterBottom variant="h5" component="div">
+                  <CardContent sx={{ height: 120, backgroundColor: "#1d1d1d" }}>
+                    <Typography gutterBottom variant="h5" component="div" color="white">
                       {data.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="white">
                       {data.description}
                     </Typography>
                   </CardContent>
-                </Card>
               </Grid>
             );
           })}

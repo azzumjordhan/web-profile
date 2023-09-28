@@ -4,7 +4,8 @@ import { setLoading } from "./global";
 export const getTechDashboard = () => async (dispatch: any) => {
   try {
     const response = await getDashboardTech();
-    dispatch({type: 'GET_TECH_DASHBOARD', value: response?.data});
+    console.log(response);
+    dispatch({type: 'GET_TECH_DASHBOARD', value: response?.data?.data});
     dispatch(setLoading(false));
   } catch {
     dispatch({type: 'GET_TECH_DASHBOARD', value: []});

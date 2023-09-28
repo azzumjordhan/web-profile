@@ -4,7 +4,7 @@ import { setLoading } from "./global";
 export const getArticle = (value: any) => async (dispatch: any) => {
   try {
     const response = await getAllArticle(value);
-    dispatch({ type: "GET_ALL_ARTICLE", value: response.data?.data });
+    dispatch({ type: "GET_ALL_ARTICLE", value: response?.data?.data });
     dispatch(setLoading(false));
   } catch {
     dispatch({ type: "GET_ALL_ARTICLE", value: [] });
@@ -15,7 +15,7 @@ export const getArticle = (value: any) => async (dispatch: any) => {
 export const getDetailDataArticle = (id: any) => async (dispatch: any) => {
   try {
     const response = await getDetailArticle(id);
-    dispatch({ type: "GET_DETAIL_ARTICLE", value: response.data });
+    dispatch({ type: "GET_DETAIL_ARTICLE", value: response?.data });
     dispatch(setLoading(false));
   } catch (error: any) {
     const data = error?.response?.status ?? "no internet";
