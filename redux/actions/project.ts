@@ -5,7 +5,6 @@ import { setLoading } from "./global";
 export const getProject = (value: any) => async (dispatch: any) => {
   try {
     const response = await getAllProject(value);
-    console.log(response)
     dispatch({ type: "GET_PROJECT_ALL", value: response?.data?.data });
     dispatch(setLoading(false));
   } catch (error: any) {

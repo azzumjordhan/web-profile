@@ -8,7 +8,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/documentation/:path*',
+        source: '/',
         destination: this.env.HOST + ':path*', // Proxy to Backend
       },
     ];

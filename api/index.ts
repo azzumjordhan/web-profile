@@ -3,7 +3,7 @@ import axios from "axios";
 // import { localStorageMixins } from "@/mixins/localStorage.mixin";
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: process.env.HOST,
   headers: {
     Accept: "*/*",
   },
