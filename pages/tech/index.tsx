@@ -54,7 +54,7 @@ export default function Tech() {
       <h2 style={{ color: "white" }}>Tech Stack</h2>
       <p style={{ fontSize: 18, color: "white" }}>
         Here I listed all the technologies that I currently use for web development and familiar
-        with as well as some that I've planned to learn.
+        with as well as some that I have planned to learn.
       </p>
       <TechStack
         backend={dataCategoryTech?.backend}

@@ -57,7 +57,7 @@ const Project = () => {
       <Box sx={{ borderBottom: 1, marginBottom: 2, borderColor: "white" }}>
         <h2 style={{ color: "white" }}>Project</h2>
         <p style={{ fontSize: 24, color: "white" }}>
-          As a back end developer, here are the projects I've worked on
+          As a back end developer, here are the projects I have worked on
         </p>
       </Box>
       <Box sx={{ borderBottom: 1, marginBottom: 2, borderColor: "white" }}>

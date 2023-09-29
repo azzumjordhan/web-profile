@@ -49,7 +49,7 @@ export default function AboutMe() {
           Several years ago while still in college, I focused on the front end.
           My first front end project was during my internship at PT. Delta Neva
           Angkasa (DomaiNesia) in 2018. Here I have the task of changing the
-          appearance of the payment page from the company's website.
+          appearance of the payment page from the companys website.
           <br></br>
           <br></br>
           While working on my final project for my thesis, I created a realtime
@@ -64,7 +64,7 @@ export default function AboutMe() {
           the task of developing the web, and focusing as a back-end developer
           to make REST API. And since July 2023, I have been contracted as an
           employee of the company PT. Tumbuh Bersama Nano. I have listed my tech
-          knowledge that I have worked with and that I'm currently learning in
+          knowledge that I have worked with and that I am currently learning in
           tech page.
         </Typography>
         <Typography

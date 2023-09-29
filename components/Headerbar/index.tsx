@@ -30,7 +30,7 @@ export default function Headerbar() {
 
   return (
     <Box sx={{ borderBottom: 1, borderColor: "white" }}>
-      <Tabs sx={tabStyle} value={value} onChange={handleChange}>
+      <Tabs sx={{ backgroundColor: "#000000" }} value={value} onChange={handleChange}>
         <Tab
           sx={{ color: "white" }}
           label="Home"

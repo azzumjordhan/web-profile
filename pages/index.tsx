@@ -56,7 +56,7 @@ export default function Home() {
       <Box sx={{ borderBottom: 1, marginBottom: 2 }}>
         <h2 style={{ color: "white" }}>Moh Azzum Jordhan Wiratama</h2>
         <p style={{ fontSize: 20, color: "white" }}>
-          Hey, I'm a Back End Developer at Nanovest (PT. Tumbuh Bersama Nano). I
+          Hey, I am a Back End Developer at Nanovest (PT. Tumbuh Bersama Nano). I
           enjoy working with NodeJS and Java, especially NestJS and Spring Boot.
           In Nanovest I have a job desk for developing Rest API.
         </p>

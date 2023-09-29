@@ -7,7 +7,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/configTheme";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
-import { LogoAJ } from "@/public/favicon.ico";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </title>
           <meta name="description" content="Web Profile" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href={LogoAJ} sizes="32x32" />
+          <link rel="icon" href="https://res.cloudinary.com/dwd5gbkbb/image/upload/v1695970251/web-profile/tozn4yltk7yjqpdizwby.png" sizes="32x32" />
         </Head>
         <Component {...pageProps} />
       </ThemeProvider>
