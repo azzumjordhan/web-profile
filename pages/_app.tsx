@@ -7,6 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/configTheme";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
+import { LogoAJ } from "@/public/favicon.ico";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <Head>
           <title style={{ textTransform: "capitalize" }}>
-            Moh Azzum Jordhan Wiratama || Back End Developer
+            Moh Azzum Jordhan Wiratama
           </title>
           <meta name="description" content="Web Profile" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/public/favicon.ico" />
+          <link rel="icon" href={LogoAJ} sizes="32x32" />
         </Head>
         <Component {...pageProps} />
       </ThemeProvider>
