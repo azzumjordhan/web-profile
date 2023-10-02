@@ -88,7 +88,7 @@ const Project = () => {
           {dataProject?.items?.length > 0 &&
           dataProject?.items?.map(( data: any, index: number) => {
             return (
-              <Grid item xs={3} key={data.id} minWidth="340px">
+              <Grid item xs={3} key={data.id} sx={{ minWidth: { xs: 340, sm: 280 }}}>
                   <CardMedia
                     component="img"
                     height="180"
