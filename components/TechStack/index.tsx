@@ -14,20 +14,21 @@ const TechStack = (props: EnhancedDataTech) => {
       <Box sx={{ backgroundColor: "#1F2937", borderRadius: "10px" }}>
         <Box sx={{ margin: "10px", paddingTop: "2px" }}>
           <h3 style={{ color: "white" }}>Tech for Back End</h3>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} alignContent="space-around" alignItems="center">
             {backend?.length > 0 && backend.map((data: any, index: number) => {
               return(
-              <Grid item xs={3} key={data.id}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="180"
-                  image={data.picture}
-                  alt={data.name_tech}
-                  sx={{ objectFit: "contain" }}
-                />
-              </Card>
-            </Grid>)
+                <Grid item xs={3} key={data.id} minWidth={160}>
+                  <Card>
+                    <CardMedia
+                      component="img"
+                      height="180"
+                      image={data.picture}
+                      alt={data.name_tech}
+                      sx={{ objectFit: "contain" }}
+                    />
+                  </Card>
+                </Grid>
+              )
             })}
           </Grid>
         </Box>
@@ -91,10 +92,10 @@ const TechStack = (props: EnhancedDataTech) => {
       <Box sx={{ backgroundColor: "#1F2937", borderRadius: "10px" }}>
         <Box sx={{ margin: "10px", paddingTop: "2px" }}>
           <h3 style={{ color: "white" }}>Tech for Front End</h3>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} alignContent="space-around" alignItems="center">
             {frontend?.length > 0 && frontend?.map((data: any, index: number) => {
               return(
-                <Grid item xs={3} key={data.id}>
+                <Grid item xs={3} key={data.id} minWidth={160}>
                   <Card>
                     <CardMedia
                       component="img"
@@ -170,10 +171,10 @@ const TechStack = (props: EnhancedDataTech) => {
       <Box sx={{ backgroundColor: "#1F2937", borderRadius: "10px" }}>
         <Box sx={{ margin: "10px", paddingTop: "2px" }}>
           <h3 style={{ color: "white" }}>Database</h3>
-          <Grid container spacing={2} sx={{ marginBottom: 2 }}>
+          <Grid container spacing={2} sx={{ marginBottom: 2 }} alignContent="space-around" alignItems="center">
             {database?.length > 0 && database?.map((data: any, index: number) => {
               return(
-                <Grid item xs={3} key={data.id}>
+                <Grid item xs={3} key={data.id} minWidth={160}>
                   <Card>
                     <CardMedia
                       component="img"

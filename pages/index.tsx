@@ -54,17 +54,48 @@ export default function Home() {
     <Container maxWidth="lg">
       <Headerbar />
       <Box sx={{ borderBottom: 1, marginBottom: 2 }}>
-        <h2 style={{ color: "white" }}>Moh Azzum Jordhan Wiratama</h2>
-        <p style={{ fontSize: 20, color: "white" }}>
+        <Typography
+          variant="h2"
+          color="white"
+          fontWeight="700"
+          sx={{
+            marginTop: "10px",
+            marginBottom: "5px",
+            paddingTop: "10px",
+            paddingBottom: "10px"
+          }}>Moh Azzum Jordhan Wiratama
+        </Typography>
+        <Typography
+          color="white"
+          fontWeight="500"
+          fontSize="18px"
+          align="justify"
+          sx={{
+            marginTop: "5px",
+            marginBottom: "10px",
+            paddingTop: "10px",
+            paddingBottom: "10px"
+          }}
+        >
           Hey, I am a Back End Developer at Nanovest (PT. Tumbuh Bersama Nano). I
           enjoy working with NodeJS and Java, especially NestJS and Spring Boot.
           In Nanovest I have a job desk for developing Rest API.
-        </p>
-        <h1 style={{ color: "white" }}>Tech</h1>
+        </Typography>
+        <Typography
+          variant="h1"
+          color="white"
+          fontWeight="700"
+          sx={{
+            marginTop: "10px",
+            marginBottom: "5px",
+            paddingTop: "10px",
+            paddingBottom: "10px"
+          }}>My Tech Stack
+        </Typography>
         <Grid container spacing={2}>
           {dashboardTech?.length > 0 && dashboardTech.map((data: any, index: number) => {
             return (
-              <Grid item xs={3} key={data.id}>
+              <Grid item xs={3} key={data.id} minWidth={160}>
                 <Card>
                   <CardMedia
                     component="img"
@@ -78,9 +109,29 @@ export default function Home() {
             )
           })}
         </Grid>
-        <h1 style={{ color: "white" }}>Articles</h1>
+        <Typography
+          variant="h1"
+          color="white"
+          fontWeight="700"
+          sx={{
+            marginTop: "10px",
+            marginBottom: "5px",
+            paddingTop: "10px",
+            paddingBottom: "10px"
+          }}>Articles
+        </Typography>
         <ArticleComponent articles={dashboardArticle?.data} />
-        <h1 style={{ color: "white" }}>Project</h1>
+        <Typography
+          variant="h1"
+          color="white"
+          fontWeight="700"
+          sx={{
+            marginTop: "10px",
+            marginBottom: "5px",
+            paddingTop: "10px",
+            paddingBottom: "10px"
+          }}>Project
+        </Typography>
         <ProjectComponent projects={dashboardProject?.data} />
       </Box>
       <Box>

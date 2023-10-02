@@ -35,13 +35,13 @@ const ArticleComponent = (props: EnhancedDataArticle) => {
         borderColor: "white",
       }}
     >
-      <Stack spacing={2} marginBottom={2}>
+      <Stack spacing={2} marginBottom={2} minWidth="340px">
         {articles?.length > 0 &&
           articles?.map((data: any, index: number) => {
             return (
               <Item
                 key={data.id}
-                sx={{ cursor: "pointer" }}
+                sx={{ cursor: "pointer", minHeight: "80px" }}
                 onClick={() => {
                   router.push(`/article/detail/${data.id}`);
                 }}
@@ -52,7 +52,7 @@ const ArticleComponent = (props: EnhancedDataArticle) => {
                   </Grid>
                   <Grid item xs={4} textAlign="right">
                     <Typography color="white">
-                      {moment(data.created_at).format("DD MMMM YYYY")}
+                      {moment(data.created_at).format("DD-MM-YYYY")}
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>

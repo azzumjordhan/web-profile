@@ -55,17 +55,40 @@ const Project = () => {
     <Container maxWidth="lg">
       <Headerbar />
       <Box sx={{ borderBottom: 1, marginBottom: 2, borderColor: "white" }}>
-        <h2 style={{ color: "white" }}>Project</h2>
-        <p style={{ fontSize: 24, color: "white" }}>
-          As a back end developer, here are the projects I have worked on
-        </p>
+        <Typography
+          variant="h2"
+          color="white"
+          fontWeight="700"
+          sx={{
+            marginTop: "10px",
+            marginBottom: "5px",
+            paddingTop: "10px",
+            paddingBottom: "10px"
+          }}>Projects
+        </Typography>
+        <Typography
+          color="white"
+          fontWeight="500"
+          fontSize="18px"
+          align="justify"
+          sx={{
+            marginTop: "5px",
+            marginBottom: "10px",
+            paddingTop: "10px",
+            paddingBottom: "10px"
+          }}
+        >
+        As a back end developer, here are the projects I have worked on.
+        But apart from that, I also include projects other than back end development,
+        such as in creating this portfolio website. I also develop websites from the front end side.
+        </Typography>
       </Box>
       <Box sx={{ borderBottom: 1, marginBottom: 2, borderColor: "white" }}>
         <Grid container spacing={2} sx={{ marginBottom: 2 }}>
           {dataProject?.items?.length > 0 &&
           dataProject?.items?.map(( data: any, index: number) => {
             return (
-              <Grid item xs={3} key={data.id}>
+              <Grid item xs={3} key={data.id} minWidth="340px">
                   <CardMedia
                     component="img"
                     height="180"

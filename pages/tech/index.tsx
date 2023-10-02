@@ -3,7 +3,7 @@ import SocialMedia from "@/components/SocialMedia";
 import TechStack from "@/components/TechStack";
 import { getTechByCategory, getTechStack } from "@/redux/actions";
 import Copyright from "@/source/Copyright";
-import { Box, Card, CardMedia, Container, Grid } from "@mui/material";
+import { Box, Card, CardMedia, Container, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -51,11 +51,32 @@ export default function Tech() {
   return (
     <Container maxWidth="lg">
       <Headerbar />
-      <h2 style={{ color: "white" }}>Tech Stack</h2>
-      <p style={{ fontSize: 18, color: "white" }}>
+      <Typography
+        variant="h2"
+        color="white"
+        fontWeight="700"
+        sx={{
+          marginTop: "10px",
+          marginBottom: "5px",
+          paddingTop: "10px",
+          paddingBottom: "10px"
+        }}>Tech Stack
+      </Typography>
+      <Typography
+        color="white"
+        fontWeight="500"
+        fontSize="18px"
+        align="justify"
+        sx={{
+          marginTop: "5px",
+          marginBottom: "10px",
+          paddingTop: "10px",
+          paddingBottom: "10px"
+        }}
+      >
         Here I listed all the technologies that I currently use for web development and familiar
         with as well as some that I have planned to learn.
-      </p>
+      </Typography>
       <TechStack
         backend={dataCategoryTech?.backend}
         frontend={dataCategoryTech?.frontend}
